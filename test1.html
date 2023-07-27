@@ -17,6 +17,15 @@
 			height : "400px",	// 지도의 높이
 			zoom : 16	// 지도 줌레벨
 		});
+        //2. 시작 심볼 찍기
+        marker_s = new Tmapv3.Marker(
+            {
+            position: new Tmapv3.LatLng(37.46671695320371, 126.93308346538122),
+            icon: "image/MyLocationMarker.png",
+            iconSize: new Tmapv3.Size(14, 14),
+            map: map
+            }
+        )
 	} 
 </script>
 <link rel="stylesheet" href="test1.css">
