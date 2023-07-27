@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+        margin : 0;
+        padding : 0;
+    }
+    #box {
+        width: 100%;
+        height : 675px;
+    }
+    #header {
+        width : 100%;
+        height : 5%;
+        background-color: white;
+        display: flex;
+        align-items: center;
+    }
+    #a1 {
+        width : 10%;
+        height : 100%;
+        float: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #b1 {
+        width : 80%;
+        height : 100%;
+        float: left;
+        line-height: 9vw;
+        color: gray;
+        font-size : 3vw; 
+    }
+    #c1 {
+        width : 10%;
+        height : 100%;
+        float: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #map {
+        width : 100%;
+        height : 60%;
+    }
+    #footer {
+        width : 100%;
+        height : 35%;
+        border-radius: 10%;
+    }
+    #a2 {
+        height : 5%;
+        float: left;
+        margin : 5% 0 5% 5%;
+    }
+    .spotbox {
+        float : left;
+        width : 90%;
+        height : 40px;
+        border: 1px gray solid;
+        line-height : 40px;
+        text-align: center;
+        border-radius: 10px;
+        margin : 3% 5% 0% 5%;
+    }
+</style>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <div id="box">
+        <div id="header">
+            <div id="a1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 20 15">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                </svg>
+            </div>
+            <div id="b1">
+                <span>장소를 입력하세요</span>
+            </div>
+            <div id="c1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 20 15">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="map">
+
+        </div>
+        <div id="footer">
+            <div id="a2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-battery-charging" viewBox="0 0 16 16">
+                    <path d="M9.585 2.568a.5.5 0 0 1 .226.58L8.677 6.832h1.99a.5.5 0 0 1 .364.843l-5.334 5.667a.5.5 0 0 1-.842-.49L5.99 9.167H4a.5.5 0 0 1-.364-.843l5.333-5.667a.5.5 0 0 1 .616-.09z"/>
+                    <path d="M2 4h4.332l-.94 1H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h2.38l-.308 1H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
+                    <path d="M2 6h2.45L2.908 7.639A1.5 1.5 0 0 0 3.313 10H2V6zm8.595-2-.308 1H12a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H9.276l-.942 1H12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.405z"/>
+                    <path d="M12 10h-1.783l1.542-1.639c.097-.103.178-.218.241-.34V10zm0-3.354V6h-.646a1.5 1.5 0 0 1 .646.646zM16 8a1.5 1.5 0 0 1-1.5 1.5v-3A1.5 1.5 0 0 1 16 8z"/>
+                </svg>
+                <span>가까운 충전소</span>
+            </div>
+            <div id="c2" class="spotbox">
+                신길역 230m
+            </div>
+            <div id="d2" class="spotbox">
+                양평2동주민센터 542m
+            </div>
+            <div id="e2" class="spotbox">
+                신길4동주민센터 1.2km
+            </div>
+        </div>
+    </div>
+</body>
+</html>
