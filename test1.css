@@ -61,6 +61,11 @@
     margin : 3% 5% 0% 5%;
     font-weight: 800;
     padding-left : 15px;
+    cursor: pointer;
+}
+
+.spotbox:hover{
+    background-color: #F3F3F3;
 }
 
 #footer_text{
@@ -68,3 +73,4 @@
      font-size: 18px;
      font-weight: 800;
 }
+
