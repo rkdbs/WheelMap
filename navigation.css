@@ -7,13 +7,13 @@ body{
     -ms-overflow-style: none;
     width: 100%;
     height: 100%;
-    
 }
 ::-webkit-scrollbar {
      display: none;
 } 
 i{
     font-size: 1.2rem;
+    
 }
 .nav{
     /* position: fixed; */
@@ -34,9 +34,14 @@ input{
     outline: none;
     font-size: 0.8rem;
 }
+.map_div{
+    top: -100px;
+}
 .buttonAll{
+    position: absolute;
+    width: 92% !important;
     margin: 0% 0% 4% 0%;
-    padding: 4% 4% 0% 4%;
+    padding: 3.5% 4% 0% 4%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -57,6 +62,7 @@ button{
     background-color: white;
     border-radius: 50px;
     border: none;
+    z-index: 999 !important;
     /* border-image: linear-gradient(to bottom,  #fff, #c7c7c7);
     border-image-slice: 1; */
 }
@@ -127,3 +133,7 @@ button:focus {
     font-size: 0.9rem;
     color: black;
 }
+/* .vsm-container.vsm-container-bg{
+    top: -80px;
+    z-index: -999;
+} */

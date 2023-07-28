@@ -13,12 +13,14 @@
     function initTmap(){
     // map 생성
     // Tmapv3.Map을 이용하여, 지도가 들어갈 div, 넓이, 높이를 설정합니다.
-    var map = new Tmapv3.Map("map", { // 지도가 생성될 div
+    var map = new Tmapv3.Map("map_div", { // 지도가 생성될 div
         center : new Tmapv3.LatLng(37.46671695320371, 126.93308346538122),
         width : "100%",	// 지도의 넓이
         height : "550px",	// 지도의 높이
+        top: "-80",
         zoom : 16	// 지도 줌레벨
     });
+
     //2. 시작 심볼 찍기
     marker_s = new Tmapv3.Marker(
         {
@@ -29,9 +31,14 @@
         }
     )
 }
+const element = document.querySelector('.vsm-container');
+
+// 스타일을 수정합니다.
+element.style.top = '50px'; // top 속성을 50px로 수정
+element.style.zIndex = '100'; // z-index 속성을 100으로 수정
 </script>
 </head>
-<body>
+<body onload="initTmap()">
     <!-- 바 -->
     <div class="nav container">
         <div class="flex">
@@ -46,8 +53,6 @@
     </div>
     <!-- 지도 및 대중교통 버튼 -->
     <div id="map">
-        <body onload="initTmap()"><!-- 맵 생성 실행 -->
-        </body>
         <div class="buttonAll">
             <button class="button" onclick="location.href='walk.html'"><i class='bx bx-accessibility'></i>도보</button>
             <button class="button"><i class='bx bxs-train'></i>지하철</button>
@@ -55,26 +60,27 @@
             <button class="button"><i class='bx bxs-car'></i>자동차</button>
         </div> 
         <!-- 하단 창 -->
-     <div class="floor">
-        <i class='bx bx-minus'></i>
-        <div class="flex2">
-            <div class="name">신길역</div>
-            <div class="time">5분 소요</div>
+        <div class="floor">
+            <i class='bx bx-minus'></i>
+            <div class="flex2">
+                <div class="name">신길역</div>
+                <div class="time">5분 소요</div>
+            </div>
+            <div class="address">
+                신길역 230m<br>
+                서울특별시 영등포구 신길동 41-1
+            </div>
+            <div class="start">
+                <i class='bx bxs-map'></i>
+                <div class="startName">신길슈퍼</div>
+            </div>
+            <i class='bx bx-dots-vertical-rounded' ></i>
+            <div class="end">
+                <i class='bx bxs-map'></i>
+                <div class="startName"> 신길역</div>
+            </div> 
         </div>
-        <div class="address">
-            신길역 230m<br>
-            서울특별시 영등포구 신길동 41-1
-        </div>
-        <div class="start">
-            <i class='bx bxs-map'></i>
-            <div class="startName">신길슈퍼</div>
-        </div>
-        <i class='bx bx-dots-vertical-rounded' ></i>
-        <div class="end">
-            <i class='bx bxs-map'></i>
-            <div class="startName"> 신길역</div>
-        </div> 
-    </div>
+        <div id="map_div"></div>
     </div>
 </body>
 </html>
