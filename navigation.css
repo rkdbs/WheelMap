@@ -1,7 +1,7 @@
 html,
 body{
     position: relative;
-    /* background-color: #FFC700; */
+    /* background-color: #ffd53f; */
     margin: 0;
     padding: 0;
     -ms-overflow-style: none;
@@ -47,14 +47,14 @@ input{
     flex-wrap: nowrap;
     column-gap: 3%;
     overflow-x: auto;
-    width: auto;
+    /* width: auto; */
 }
-button{
-    flex: 0 0 28%; 
+.button {
+    flex: 0 0 32%;
     display: flex;
     column-gap: 5%;
-    padding: 1.5%;
-    font-size: 0.9rem;
+    padding: 1.6% 3% 1.6% 3%;
+    font-size: 1.3rem;
     font-weight: 600;
     justify-content: center;
     text-align: center;
@@ -63,15 +63,14 @@ button{
     border-radius: 50px;
     border: none;
     z-index: 999 !important;
-    /* border-image: linear-gradient(to bottom,  #fff, #c7c7c7);
-    border-image-slice: 1; */
 }
-button:hover{
+
+.button:hover{
     background-color: #ebebeb;
 }
-button:active,
-button:focus {
-    background-color: #FFC700;
+.button:active,
+.button:focus {
+    background-color: #ffd53f;
     color: white;
 }
 #map{
@@ -81,7 +80,7 @@ button:focus {
 .floor{ 
     position: absolute;
     width: 90%;
-    height: 26%;
+    height: 40%;
     padding: 0% 5% 5% 5%;
     border-radius: 20px 20px 0px 0px;
     bottom: 0;
@@ -101,39 +100,50 @@ button:focus {
     flex-direction: row;
     align-items: flex-end;
     column-gap: 2%;
+    margin-top: 1%;
 }
 .name{
     margin-top: 1%;
-    font-size: 1.3rem;
+    font-size: 1.9rem;
     font-weight: bolder;
 }
 .time{
-    font-size: 0.7rem;
+    font-size: 1.4rem;
     font-weight: 600;
 }
 .address{
-    font-size: 0.8rem;
-    margin: 1% 0% 4% 0%;
+    font-size: 1.3rem;
+    margin: 3% 0% 5% 0%;
     color: #1A1A1A;
 }
 .bx-dots-vertical-rounded{
-    margin: 1% 0% 1% 0%;
-    color: #FFC700;
+    margin: 1.5% 0% 1.5% 0%;
+    color: #ffd53f;
 }
 .start,
 .end{
     display: flex;
     flex-direction: row;
     column-gap: 2%;
-    color: #FFC700;
+    color: #ffd53f;
     font-weight: bold;
+    text-align: top;
 }
 .startName,
 .endName{
-    font-size: 0.9rem;
+    font-size: 1.4rem;
     color: black;
+    /* margin-bottom: 1%; */
+
 }
-/* .vsm-container.vsm-container-bg{
-    top: -80px;
-    z-index: -999;
-} */
+.startBtn{
+    font-size: 1.3rem;
+    /* font-weight: bold; */
+    color: white;
+    background-color: #ffd53f;
+    border: 0;
+    border-radius: 30px;
+    padding: 3% 10% 3% 10%;
+    margin: 0 auto;
+    /* width: ; */
+}
