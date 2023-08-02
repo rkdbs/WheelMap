@@ -1,0 +1,156 @@
+html,
+body{
+    height: 99%;
+    display: flex;
+    justify-content: center;
+    margin-right: 0;
+}
+.login-container{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    width: 100%;
+}
+.loginText{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    /* margin: 0; */
+    margin-top: 20%;
+    margin-bottom: 15%;
+}
+hr{
+    margin: 3%;
+    background-color: #ffd53f;
+    border: 0;
+    height: 3px;
+}
+h1{
+    margin: 0;
+}
+.login{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* gap: 10%; */
+}
+.id-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8%;
+}
+.password-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8%;
+    /* align-items: center; */
+}
+.email-container{
+    margin-bottom: 8%;
+}
+.phone-container{
+    width: 100%;
+}
+.phoneBox{
+    margin-bottom: 5%;
+    height: 9.7vw;
+    margin-right: 3%;
+}
+.id, 
+.password,
+.email,
+.phone{
+    font-size: 0.9rem;
+    display: flex;
+    font-weight: 500;
+    justify-content: flex-start;
+    margin-bottom: 3%;
+}
+input{
+    width: 93%;
+    padding: 2%;
+    border-style: solid;
+    border-color: #d2d2d2;
+    border-radius: 5px;
+    outline: none;
+    border-width: 1px;
+    /* color: #e4e4e4; */
+    font-weight: 100;
+    height: 3vh;
+}
+input::placeholder{
+    color: #d2d2d2;
+    font-size: 0.7rem;
+}
+.mailInput{
+    width: 43%;
+}
+select{
+    border-style: solid;
+    border-color: #d2d2d2;
+    border-radius: 5px;
+    width: 41%;
+    outline: none;
+    
+    color: #d2d2d2;
+
+}
+option{
+    font-size: 0.8rem;
+}
+select:focus{
+    color: #272727;
+}
+.join{
+    color: #ffd53f;
+}
+
+.joinBtn{
+    width: 48%;
+    height: 5%;
+    background-color: #ffd53f;
+    border: 0;
+    border-radius: 30px;
+    color: white;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 15%;
+
+}
+
+.bx-right-arrow-alt{
+    font-size: 0.9rem;
+    margin-left: 5%;
+}
+.and{
+    margin: 2%;
+    color: #d2d2d2;
+    font-weight: 200;
+}
+.flex{
+    display: flex;
+}
+.number{
+    display: flex;
+}
+.getNum{
+    display: flex;
+}
+.getBtn{
+    width: 50%;
+    border: none;
+    border-radius: 5px;
+    /* background-color: #e3e3e3; */
+    margin-right: 3%;
+    font-size: 0.7rem;
+}
+.check{
+    margin-left: 3%;
+    width: 30%;
+    border-radius: 5px;
+    border: none;
+}

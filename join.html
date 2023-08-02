@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="join.css">
+    <link rel="stylesheet" href="all.css">
+</head>
+<body style="width: 83%;">
+    <div class="login-container">
+        <h1 class="loginText">회원가입<hr></h1>
+        <div class="login">
+            <div class="id-container">
+                <h1 class="id">아이디</h1>
+                <input type="text" placeholder="아이디를 입력해주세요" onfocus="this.placeholder=''" onblur="this.placeholder='아이디 혹은 이메일을 입력하세요'" >
+            </div>
+            <div class="password-container">
+                <h1 class="password">비밀번호</h1>
+                <input type="password" placeholder="특수기호를 포함한 8자~16자의 비밀번호를 입력해주세요" onfocus="this.placeholder=''" onblur="this.placeholder='특수기호를 포함한 8자~16자의 비밀번호를 입력해주세요'">
+            </div>
+            <div class="password-container">
+                <h1 class="password">비밀번호 확인</h1>
+                <input type="password" placeholder="특수기호를 포함한 8자~16자의 비밀번호를 입력해주세요" onfocus="this.placeholder=''" onblur="this.placeholder='특수기호를 포함한 8자~16자의 비밀번호를 입력해주세요'">
+            </div>
+            <div class="email-container">
+                <h1 class="email">이메일</h1>
+                <div class="flex">
+                    <input type="text" class="mailInput" placeholder="이메일을 입력해주세요" onfocus="this.placeholder=''" onblur="this.placeholder='이메일을 입력해주세요'" >
+                    <div class="and">@</div>
+                    <select name="mail" class="mailBox">
+                        <option value="gmail">gmail.com</option>
+                        <option value="naver">naver.com</option>
+                        <option value="hanmail">hanmail.net</option>
+                        <option value="selfmail" selected="selected">직접입력</option>
+                    </select>
+                </div>
+            </div>
+            <div class="phone-container">
+                <h1 class="phone">휴대폰 번호</h1>
+                <div class="number">
+                <select name="phone" class="phoneBox">
+                    <option value="skt">SKT</option>
+                    <option value="kt">KT</option>
+                    <option value="lgU+">LG U+</option>
+                    <option value="alddle">알뜰폰</option>
+                </select>
+                    <input type="text" placeholder="휴대폰 번호를 입력해주세요" onfocus="this.placeholder=''" onblur="this.placeholder='휴대폰 번호를 입력해주세요'">
+                </div>
+                <div class="getNum">
+                    <button class="getBtn">인증번호 받기</button>
+                    <input type="text" placeholder="인증번호를 입력해주세요" onfocus="this.placeholder=''" onblur="this.placeholder='인증번호를 입력해주세요'">
+                    <button class="check">확인</button>
+                </div> 
+            </div>
+        </div>
+        <button class="joinBtn">회원가입하기<i class='bx bx-right-arrow-alt'></i></button>
+    </div>
+</body>
+</html>
