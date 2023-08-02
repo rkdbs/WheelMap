@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="all.css">
+</head>
+<body style="width: 83%;">
+    <div class="login-container">
+        <h1 class="loginText">로그인<hr></h1>
+        <div class="login">
+            <div class="id-container">
+                <h1 class="id">아이디</h1>
+                <input type="text" placeholder="아이디 혹은 이메일을 입력하세요" onfocus="this.placeholder=''" onblur="this.placeholder='아이디 혹은 이메일을 입력하세요'" >
+            </div>
+            <div class="password-container">
+                <h1 class="password">비밀번호</h1>
+                <input type="password" placeholder="특수기호를 포함한 8자~16자의 비밀번호를 입력해주세요" onfocus="this.placeholder=''" onblur="this.placeholder='특수기호를 포함한 8자~16자의 비밀번호를 입력해주세요'">
+            </div>
+        </div>
+        <div>
+            <button class="btn join">회원가입</button>
+            <button class="btn search-id">아이디 찾기</button>
+            <button class="btn search-password">비밀번호 찾기</button>
+        </div>
+        <button class="loginBtn">로그인하기<i class='bx bx-right-arrow-alt'></i></button>
+    </div>
+</body>
+</html>
