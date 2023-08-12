@@ -16,8 +16,8 @@
     <div class="slide">
         <i class='bx bx-subdirectory-right'></i>
         <div class="text">
-            <div class="meter">320m</div>
-            <div class="subText">신길슈퍼 방면</div>
+            <div class="meter" id = "meter"></div>
+            <div class="subText" id = "subText"></div>
         </div>
     </div>
   </span>
@@ -205,8 +205,13 @@
                 console.log(JSON.parse(localStorage.getItem("navigation")));
                 let navigation = JSON.parse(localStorage.getItem("navigation"));
                 
-                var reg=/\d{1,3}\m/g;
+                let reg=/\d{1,3}\m/g;
+                let textDescription = navigation[0].description.replace(navigation[0].description.match(reg)[0] , "");
                 console.log(navigation[0].description.match(reg)[0]);
+
+                document.getElementById("meter").innerHTML=navigation[0].description.match(reg)[0];
+                document .getElementById("subText").innerHTML= textDescription;
+
               },
               error: function (request, status, error) {
                 console.log("code:" + request.status + "\n"
