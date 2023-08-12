@@ -20,20 +20,6 @@
             <div class="subText">신길슈퍼 방면</div>
         </div>
     </div>
-    <div class="slide">
-        <i class='bx bx-subdirectory-left'></i>
-        <div class="text">
-            <div class="meter">430m</div>
-            <div class="subText">브레드이발소 방면</div>
-        </div>
-    </div>
-    <div class="slide">
-        <i class='bx bx-subdirectory-right'></i>
-        <div class="text">
-            <div class="meter">200m</div>
-            <div class="subText">신길역 방면</div>
-        </div>
-    </div>
   </span>
   <div id="map"></div>
 
@@ -123,7 +109,7 @@
               },
               success: function (response) {
                 var resultData = response.features;
-
+                var infoData = [];
                 //기존 그려진 라인 & 마커가 있다면 초기화
                 if (resultdrawArr.length > 0) {
                   for (var i in resultdrawArr) {
@@ -139,6 +125,15 @@
                   var geometry = resultData[i].geometry;
                   var properties = resultData[i].properties;
                   var polyline_;
+
+                  let info = 
+                  {
+                    "coordinate" : geometry.coordinates,
+                    "description" : properties.description
+                  };
+
+                  infoData.push(info);
+
 
 
                   if (geometry.type == "LineString") {
@@ -205,6 +200,10 @@
                   }
                 }//for문 [E]
                 drawLine(drawInfoArr);
+                console.log(infoData);
+                localStorage.setItem("navigation", JSON.stringify(infoData));
+                console.log(JSON.parse(localStorage.getItem("navigation")));
+
               },
               error: function (request, status, error) {
                 console.log("code:" + request.status + "\n"
