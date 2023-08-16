@@ -49,6 +49,7 @@ h1{
     /* align-items: center; */
 }
 .email-container{
+    width: 100%;
     margin-bottom: 8%;
 }
 .phone-container{
@@ -109,7 +110,7 @@ select:focus{
 }
 
 .joinBtn{
-    width: 48%;
+    width: 100%;
     height: 5%;
     background-color: #ffd53f;
     border: 0;
@@ -136,9 +137,12 @@ select:focus{
 }
 .number{
     display: flex;
+    column-gap: 5%;
+    margin-bottom: 5%;
 }
 .getNum{
     display: flex;
+    width: 61.8%;
 }
 .getBtn{
     width: 50%;
@@ -147,10 +151,4 @@ select:focus{
     /* background-color: #e3e3e3; */
     margin-right: 3%;
     font-size: 0.7rem;
-}
-.check{
-    margin-left: 3%;
-    width: 30%;
-    border-radius: 5px;
-    border: none;
 }
