@@ -223,15 +223,18 @@
         const latitude = coords.latitude;   // 위도
         const longitude = coords.longitude; // 경도
 
-        console.log(`위도: ${latitude}, 경도: ${longitude}`);
+        // alert(`위도: ${latitude}, 경도: ${longitude}`)
+        // console.log(`위도: ${latitude}, 경도: ${longitude}`);
 
         const latitudeChange = Math.abs(latitude- previousPosition.latitude);
         const longitudeChange = Math.abs(longitude - previousPosition.longitude);
+        alert(`위도: ${coords.latitude}, 경도: ${coords.longitude}`);
 
         // 0.0000001  이상의 변화가 있을 때만 출력
         const threshold = 0.000001;
           if (latitudeChange >= threshold || longitudeChange >= threshold) {
-            console.log(`위도: ${coords.latitude}, 경도: ${coords.longitude}`);
+            alert(`위도: ${coords.latitude}, 경도: ${coords.longitude}`);
+            // console.log(`위도: ${coords.latitude}, 경도: ${coords.longitude}`);
           }
         previousPosition = coords;
       }
