@@ -35,7 +35,16 @@
         </div>
     </div>
   </span>
-  <div id="map"></div>
+  <div id="map">
+    <button class="endBtn" onclick="openPopup()">안내종료</button>
+  </div>
+  <div class="popup" id="popup" style="display: none;">
+    <div class="inner">
+      <p class="dsc">안내를 종료하시겠습니까?</p>
+      <button type="button" class="yes" onclick="closePopup()">예</button>
+      <button type="button" class="no" onclick="cancelPopup()">아니요</button>
+    </div>
+  </div>
 
     <script type="text/javascript">
 
@@ -69,6 +78,23 @@
             clearTimeout(slideshowTimeout);
         }
 
+
+        function openPopup() {
+          var popup = document.getElementById("popup");
+          popup.style.display = "block";
+        }
+
+        function closePopup() {
+          var popup = document.getElementById("popup");
+          popup.style.display = "none";
+          window.location.href = "navigation.html";
+        }
+
+        function cancelPopup() {
+          var popup = document.getElementById("popup");
+          popup.style.display = "none";
+        }
+
         var map;
       var marker_s, marker_e, marker_p1, marker_p2;
       var totalMarkerArr = [];
@@ -82,8 +108,8 @@
         var map = new Tmapv2.Map("map", { // 지도가 생성될 div
             center : new Tmapv2.LatLng(37.46671695320371, 126.93308346538122),
             width : "100%",	// 지도의 넓이
-            height : "580px",	// 지도의 높이
-            zoom : 16	// 지도 줌레벨
+            height : "100%",	// 지도의 높이
+            zoom : 17	// 지도 줌레벨
         });
         //2. 시작 심볼 찍기
         marker_s = new Tmapv2.Marker(
