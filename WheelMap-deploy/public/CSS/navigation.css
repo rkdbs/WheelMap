@@ -23,7 +23,7 @@ i{
     background-color: white;
     justify-content: space-between;
     align-items: center;
-    padding: 3% 2% 2% 2%;
+    padding: 3% 2% 3% 2%;
 }
 .flex{
     display: flex;
@@ -32,7 +32,7 @@ i{
 input{
     border: 0px;
     outline: none;
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 .map_div{
     top: -100px;
@@ -55,7 +55,7 @@ input{
     column-gap: 5%;
     padding: 1.6% 3% 1.6% 3%;
     font-size: 1.3rem;
-    font-weight: 600;
+    font-weight: 500;
     justify-content: center;
     text-align: center;
     align-items: center;
@@ -80,7 +80,7 @@ input{
 .floor{ 
     position: absolute;
     width: 90%;
-    height: 40%;
+    height: 34%;
     padding: 0% 5% 5% 5%;
     border-radius: 20px 20px 0px 0px;
     bottom: 0;
@@ -88,12 +88,20 @@ input{
     background-color: white;
     z-index: 1;
 }
-.bx-minus{
+/* .bx-minus{
     display: flex;
-    /* justify-content: center; */
     margin-left : 48%;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #D9D9D9;
+} */
+hr{
+    width: 8%;
+    height: 3px;
+    background-color: #D9D9D9;
+    border: 0;
+    border-radius: 10px;
+    margin-top: 4%;
+    margin-bottom: 4%;
 }
 .flex2{
     display: flex;
@@ -144,6 +152,5 @@ input{
     border: 0;
     border-radius: 30px;
     padding: 3% 10% 3% 10%;
-    margin: 0 auto;
-    /* width: ; */
+    margin-left: 57%;
 }
