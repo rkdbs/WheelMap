@@ -25,37 +25,7 @@
 
     <script type="text/javascript">
 
-      // 슬라이드쇼 코드
-      var slideIndex = 0;
-        var slideshowTimeout;
-
-        function showSlides() {
-            var slides = document.getElementsByClassName("slide");
-            for (var i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {
-                slideIndex = 1;
-            }
-            slides[slideIndex - 1].style.display = "flex";
-            if (slideIndex === slides.length) {
-                // 마지막 슬라이드일 경우 슬라이드쇼 중지
-                stopSlideshow();
-            } else {
-                slideshowTimeout = setTimeout(showSlides, 2000); // 2초마다 변경
-            }
-        }
-
-        // 슬라이드쇼 시작
-        showSlides();
-
-        // 슬라이드쇼 종료 함수
-        function stopSlideshow() {
-            clearTimeout(slideshowTimeout);
-        }
-
-        var map;
+      var map;
       var marker_s, marker_e, marker_p1, marker_p2;
       var totalMarkerArr = [];
       var drawInfoArr = [];
@@ -134,8 +104,6 @@
 
                   infoData.push(info);
 
-
-
                   if (geometry.type == "LineString") {
                     for (var j in geometry.coordinates) {
                       // 경로들의 결과값(구간)들을 포인트 객체로 변환
@@ -207,10 +175,15 @@
                 
                 let reg=/\d{1,3}\m/g;
                 let textDescription = navigation[0].description.replace(navigation[0].description.match(reg)[0] , "");
+                textDescription = textDescription.replace(" 을 ", " ")
                 console.log(navigation[0].description.match(reg)[0]);
 
                 document.getElementById("meter").innerHTML=navigation[0].description.match(reg)[0];
                 document .getElementById("subText").innerHTML= textDescription;
+
+                 // 1초마다 현재 위도 경도 출력
+                //  setInterval(getUserLocation, 1000);
+                 getUserLocation();
 
               },
               error: function (request, status, error) {
@@ -220,6 +193,7 @@
               }
             });
 
+          
           function addComma(num) {
             var regexp = /\B(?=(\d{3})+(?!\d))/g;
             return num.toString().replace(regexp, ',');
@@ -236,7 +210,56 @@
             });
             resultdrawArr.push(polyline_);
           }
-        }
+
+        let previousPosition = null;
+
+        function detectLocationChange({ coords, timestamp }) {
+          // 현재 위치가 달라졌다면 바꾸기
+          if (!previousPosition) {
+            previousPosition = coords;
+            return;
+          }
+        const latitude = coords.latitude;   // 위도
+        const longitude = coords.longitude; // 경도
+
+        console.log(`위도: ${latitude}, 경도: ${longitude}`);
+
+        const latitudeChange = Math.abs(latitude- previousPosition.latitude);
+        const longitudeChange = Math.abs(longitude - previousPosition.longitude);
+
+        // 0.0000001  이상의 변화가 있을 때만 출력
+        const threshold = 0.000001;
+          if (latitudeChange >= threshold || longitudeChange >= threshold) {
+            console.log(`위도: ${coords.latitude}, 경도: ${coords.longitude}`);
+          }
+        previousPosition = coords;
+      }
+
+    function getUserLocation() {
+      if (!navigator.geolocation) {
+          throw "위치 정보가 지원되지 않습니다.";
+      }
+      navigator.geolocation.watchPosition(detectLocationChange);
+    }     
+  }
+
+  // function success({ coords, timestamp }) {
+  //   const latitude = coords.latitude;   // 위도
+  //   const longitude = coords.longitude; // 경도
+    
+  //   console.log(`위도: ${latitude}, 경도: ${longitude}`);
+  // }
+
+  // function getUserLocation() {
+  //   if (!navigator.geolocation) {
+  //       throw "위치 정보가 지원되지 않습니다.";
+  //   }
+  //   navigator.geolocation.watchPosition(success);
+  // }
+     
+
+
+
   </script>
 </body>
 </html>
