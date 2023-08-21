@@ -225,13 +225,15 @@
 
         const latitudeChange = Math.abs(latitude- previousPosition.latitude);
         const longitudeChange = Math.abs(longitude - previousPosition.longitude);
-        alert(`처음 위도: ${coords.latitude}, 처음 경도: ${coords.longitude}`);
+        // document.getElementById("subText").innerHTML= `처음 위도: ${coords.latitude}, 처음 경도: ${coords.longitude}`;
+
+        // alert(`처음 위도: ${coords.latitude}, 처음 경도: ${coords.longitude}`);
 
         // 0.0000001  이상의 변화가 있을 때만 출력
         const threshold = 0.000001;
           if (latitudeChange >= threshold || longitudeChange >= threshold) {
+            // document.getElementById("subText").innerHTML= `위도: ${coords.latitude}, 경도: ${coords.longitude}`;
             alert(`위도: ${coords.latitude}, 경도: ${coords.longitude}`);
-            // console.log(`위도: ${coords.latitude}, 경도: ${coords.longitude}`);
           }
         previousPosition = coords;
       }
