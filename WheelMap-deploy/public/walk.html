@@ -39,13 +39,27 @@
         // 페이지가 로딩이 된 후 호출하는 함수입니다.
         function initTmap() {
             // map 생성 및 초기화
-            var map = new Tmapv2.Map("map", {
+            map = new Tmapv2.Map("map", {
                 center: new Tmapv2.LatLng(37.46671695320371, 126.93308346538122),
                 width: "100%",
                 height: "580px",
                 zoom: 16
             });
 
+            // 시작점과 도착점 마커 표시
+            marker_s = new Tmapv2.Marker({
+                position: new Tmapv2.LatLng(37.46671695320371, 126.93308346538122),
+                icon: "image/MyLocationMarker.png",
+                iconSize: new Tmapv2.Size(20, 20),
+                map: map
+            });
+
+            marker_e = new Tmapv2.Marker({
+                position: new Tmapv2.LatLng(37.472184550611196, 126.93435885637831),
+                icon: "image/EndLocationMarker.png",
+                iconSize: new Tmapv2.Size(36, 50),
+                map: map
+            });
 
             // 사용자 위치 변화 감지 시작
             getUserLocation();
