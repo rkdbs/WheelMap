@@ -233,6 +233,7 @@
 
           map.setCenter(new Tmapv2.LatLng(coords.latitude, coords.longitude));
           
+          marker_s.setPosition(new Tmapv2.LatLng(coords.latitude, coords.longitude));
           alert(`위도: ${coords.latitude}, 경도: ${coords.longitude}`);
           
           // 0.0000001  이상의 변화가 있을 때만 출력
@@ -240,7 +241,7 @@
           if (latitudeChange >= threshold || longitudeChange >= threshold) {
             alert(`위도: ${coords.latitude}, 경도: ${coords.longitude}`);
           }
-
+          
           latitude = coords.latitude;
           longitude = coords.longitude;
         }
