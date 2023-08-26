@@ -1,12 +1,13 @@
 html,
 body{
     position: relative;
-    /* background-color: #FFC700; */
+    /* background-color: #ffd53f; */
     margin: 0;
     padding: 0;
     -ms-overflow-style: none;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 ::-webkit-scrollbar {
      display: none;
@@ -23,7 +24,7 @@ i{
     background-color: white;
     justify-content: space-between;
     align-items: center;
-    padding: 3% 2% 2% 2%;
+    padding: 3% 2% 3% 2%;
 }
 .flex{
     display: flex;
@@ -32,7 +33,7 @@ i{
 input{
     border: 0px;
     outline: none;
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 .map_div{
     top: -100px;
@@ -47,15 +48,15 @@ input{
     flex-wrap: nowrap;
     column-gap: 3%;
     overflow-x: auto;
-    width: auto;
+    /* width: auto; */
 }
-button{
-    flex: 0 0 28%; 
+.button {
+    flex: 0 0 32%;
     display: flex;
     column-gap: 5%;
-    padding: 1.5%;
-    font-size: 0.9rem;
-    font-weight: 600;
+    padding: 1.6% 3% 1.6% 3%;
+    font-size: 1.3rem;
+    font-weight: 500;
     justify-content: center;
     text-align: center;
     align-items: center;
@@ -63,15 +64,14 @@ button{
     border-radius: 50px;
     border: none;
     z-index: 999 !important;
-    /* border-image: linear-gradient(to bottom,  #fff, #c7c7c7);
-    border-image-slice: 1; */
 }
-button:hover{
+
+.button:hover{
     background-color: #ebebeb;
 }
-button:active,
-button:focus {
-    background-color: #FFC700;
+.button:active,
+.button:focus {
+    background-color: #ffd53f;
     color: white;
 }
 #map{
@@ -81,7 +81,7 @@ button:focus {
 .floor{ 
     position: absolute;
     width: 90%;
-    height: 26%;
+    height: 34%;
     padding: 0% 5% 5% 5%;
     border-radius: 20px 20px 0px 0px;
     bottom: 0;
@@ -89,51 +89,69 @@ button:focus {
     background-color: white;
     z-index: 1;
 }
-.bx-minus{
+/* .bx-minus{
     display: flex;
-    /* justify-content: center; */
     margin-left : 48%;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #D9D9D9;
+} */
+hr{
+    width: 8%;
+    height: 3px;
+    background-color: #D9D9D9;
+    border: 0;
+    border-radius: 10px;
+    margin-top: 4%;
+    margin-bottom: 4%;
 }
 .flex2{
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     column-gap: 2%;
+    margin-top: 1%;
 }
 .name{
     margin-top: 1%;
-    font-size: 1.3rem;
+    font-size: 1.9rem;
     font-weight: bolder;
 }
 .time{
-    font-size: 0.7rem;
+    font-size: 1.4rem;
     font-weight: 600;
 }
 .address{
-    font-size: 0.8rem;
-    margin: 1% 0% 4% 0%;
+    font-size: 1.3rem;
+    margin: 3% 0% 5% 0%;
     color: #1A1A1A;
 }
 .bx-dots-vertical-rounded{
-    margin: 1% 0% 1% 0%;
-    color: #FFC700;
+    margin: 1.5% 0% 1.5% 0%;
+    color: #ffd53f;
 }
 .start,
 .end{
     display: flex;
     flex-direction: row;
     column-gap: 2%;
-    color: #FFC700;
+    color: #ffd53f;
     font-weight: bold;
+    text-align: top;
 }
 .startName,
 .endName{
-    font-size: 0.9rem;
+    font-size: 1.4rem;
     color: black;
+    /* margin-bottom: 1%; */
+
 }
-/* .vsm-container.vsm-container-bg{
-    top: -80px;
-    z-index: -999;
-} */
+.startBtn{
+    font-size: 1.3rem;
+    /* font-weight: bold; */
+    color: white;
+    background-color: #ffd53f;
+    border: 0;
+    border-radius: 30px;
+    padding: 3% 10% 3% 10%;
+    margin-left: 57%;
+}
