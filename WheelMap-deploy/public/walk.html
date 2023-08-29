@@ -68,7 +68,7 @@
         // 도착 심볼 찍기
         marker_e = new Tmapv2.Marker(
               {
-                position: new Tmapv2.LatLng(37.54606111904044, 127.05960093072991  ),
+                position: new Tmapv2.LatLng(37.46554709144633, 126.93168566670681),
                 icon: "image/EndLocationMarker.png",
                 iconSize: new Tmapv2.Size(36, 50),
                 map: map
@@ -86,8 +86,8 @@
               data: {
                 "startX": longitude.toString(),
                 "startY": latitude.toString(),
-                "endX": "127.05960093072991  ",
-                "endY": "37.54606111904044",
+                "endX": "126.93168566670681",
+                "endY": "37.46554709144633",
                 "resCoordType": "EPSG3857",
                 "startName": "출발지",
                 "endName": "도착지"
@@ -278,7 +278,7 @@
 
           function textSpeach(meter, speach){
 
-             utterance = new SpeechSynthesisUtterance(meter + " " + speach);
+             utterance = new SpeechSynthesisUtterance(meter + " " + speach );
              mySynth.speak(utterance);
               console.log(utterance);
           
