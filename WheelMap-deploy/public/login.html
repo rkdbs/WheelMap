@@ -4,38 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="page-enter" content="blendTrans(duration=0.3)">
+    <meta http-equiv="page-exit" content="blendTrans(duration=0.3)">
     <title>login</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="login.css">
-    <link rel="stylesheet" href="all.css">
+    <link rel="stylesheet" href="./CSS/login.css">
+    <link rel="stylesheet" href="./CSS/all.css">
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 </head>
 <body style="width: 83%;">
     <div class="login-container">
-        <h1 class="loginText">로그인<hr></h1>
-        <div class="login">
-            <div class="id-container">
-                <h1 class="id">아이디</h1>
-                <input type="text" placeholder="아이디 혹은 이메일을 입력하세요" onfocus="this.placeholder=''" onblur="this.placeholder='아이디 혹은 이메일을 입력하세요'" >
-            </div>
-            <div class="password-container">
-                <h1 class="password">비밀번호</h1>
-                <input type="password" placeholder="특수기호를 포함한 8자~16자의 비밀번호를 입력해주세요" onfocus="this.placeholder=''" onblur="this.placeholder='특수기호를 포함한 8자~16자의 비밀번호를 입력해주세요'">
-            </div>
+        <div class="icon-container">
+            <img src="./image/logo.png" class="icon">
         </div>
-        <button class="loginBtn">로그인하기<i class='bx bx-right-arrow-alt'></i></button>
-        <div>
-            <button class="btn join">회원가입</button>
-            <button class="btn search-id">아이디 찾기</button>
-            <button class="btn search-password">비밀번호 찾기</button>
-        </div>
-        <div class="athor">
-            <hr class="hr"><div class="text" style="color:#C9C9C9">다른 sns계정으로 로그인</div><hr class="hr">
-        </div>
-        <div class="snsBtn">
-            <button class="sns naver"></button>
-            <button class="sns kakao"></button>
-            <button class="sns google"></button>
-        </div>
-    </div>
+        <button class="btn btnkakao" onclick="moveKakaoLogin()">
+            <img src="./image/kakao.png" alt="kakao_logo" srcset="" style="width: 10%;">
+            카카오계정으로 로그인
+        </button>
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script>
+        const REST_API_KEY = "0fd52107db31ebeea09da3c053348a13";
+        const JAVASCRIPT_KEY = "5c4cb8cd9ce086f65a090e7fae1fc77d";
+        const kakaoLoginUrl = "https://kauth.kakao.com/oauth/authorize";
+        const kakaoTokenApiUrl = "https://kauth.kakao.com/oauth/token"; 
+        const redirectUrl = "http://127.0.0.1:5500/WheelMap-deploy/public/join.html";
+
+        // 3-2. 카카오 로그인 창으로 이동
+        function moveKakaoLogin() {
+            location.href = `${kakaoLoginUrl}?client_id=${REST_API_KEY}&redirect_uri=${redirectUrl}&response_type=code`;
+        }
+
+        function getKakaoToken(code) {
+            let token = "";
+            let data = {
+                "grant_type": "authorization_code",
+                "client_id": REST_API_KEY,
+                "redirect_uri": redirectUrl,
+                "code": code,
+            };
+
+            $.ajax(kakaoTokenApiUrl, {
+                data: data,
+                dataType: "json",
+                method: "POST",
+                async: false,
+                success: function (resultData) {
+                token = resultData.access_token;
+                console.log(token);
+                }
+            }); 
+    }
+    </script>
 </body>
 </html>

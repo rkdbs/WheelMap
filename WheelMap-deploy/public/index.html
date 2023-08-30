@@ -3,14 +3,26 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="page-enter" content="blendTrans(duration=0.5)">
+    <meta http-equiv="page-exit" content="blendTrans(duration=0.5)">
     <title>Document</title>
     <script
 	src="https://apis.openapi.sk.com/tmap/vectorjs?version=1&appKey=q1hz24YqUC7g84TRhAW3v8a52xq51B3472o9tPeF"></script>
 <link rel="stylesheet" href="CSS/index.css">
 <link rel="stylesheet" href="CSS/all.css">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script>
+    const urlParams = new URL(location.href).searchParams;
+    const code = urlParams.get('code');
+    console.log(code)
+    const REST_API_KEY = "0fd52107db31ebeea09da3c053348a13";
+    const kakaoTokenApiUrl = "https://kauth.kakao.com/oauth/token"; 
+    const kakaoUserApiUrl = "https://kapi.kakao.com/v2/user/me";
+    const redirectUrl = "http://127.0.0.1:5500/WheelMap-deploy/public/index.html";
+    const token = getKakaoToken(code);
+    getKakaoUserInfo(token);
     // 페이지가 로딩이 된 후 호출하는 함수입니다.
     function initTmap(){
     // map 생성
@@ -18,7 +30,7 @@
     var map = new Tmapv3.Map("map_div", { // 지도가 생성될 div
         center : new Tmapv3.LatLng(37.46671695320371, 126.93308346538122),
         width : "100%",	// 지도의 넓이
-        height : "400px",	// 지도의 높이
+        height : "100%",	// 지도의 높이
         zoom : 16	// 지도 줌레벨
     });
     //2. 시작 심볼 찍기
@@ -30,6 +42,45 @@
         map: map
         }
     )
+}
+    function getKakaoToken(code) {
+        let token = "";
+        let data = {
+            "grant_type": "authorization_code",
+            "client_id": REST_API_KEY,
+            "redirect_uri": redirectUrl,
+            "code": code,
+        };
+
+        $.ajax(kakaoTokenApiUrl, {
+            data: data,
+            dataType: "json",
+            method: "POST",
+            async: false,
+            success: function (resultData) {
+            token = resultData.access_token;
+            console.log(token);
+            }
+        }); 
+
+        return token;
+    }
+
+
+    // 3-5. 회원 정보 가져오기
+function getKakaoUserInfo(token) {
+	$.ajax(kakaoUserApiUrl, {
+            headers: {
+            'Authorization': `Bearer ${token}`,
+            },
+            contentType: "application/x-www-form-urlencoded;charset=utf-8",
+	        dataType: "json",
+            data: JSON.stringify({}),
+	        method: "POST",
+	        async: false,
+	        success: function (resultData) {
+	           console.log(resultData);
+	    }});
 }
 </script>
 </head>
@@ -48,7 +99,7 @@
         </div>
         <div id="map">
             <body onload="initTmap()"><!-- 맵 생성 실행 -->
-                <div id="map_div"></div>
+                <div id="map_div" style="height: 800px;"></div>
             </body>
         </div>
         <div id="footer">
