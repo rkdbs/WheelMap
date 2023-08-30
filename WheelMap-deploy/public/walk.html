@@ -201,6 +201,21 @@
                 document.getElementById("meter").innerHTML=navigation[cnt].description.match(reg)[0];
                 document.getElementById("subText").innerHTML= textDescription;
 
+                if(textDescription.includes("좌회전")){
+                  var imgElement = document.getElementById("Img");
+                  imgElement.src = "image/rightArrow.png"
+                  console.log("좌회전");
+                }
+                else if(textDescription.includes("우회전")){
+                  var imgElement = document.getElementById("Img");
+                  imgElement.src = "image/leftArrow.png";
+                  console.log("우회전");
+                }
+              else{
+                var imgElement = document.getElementById("Img");
+                imgElement.src = "image/straightArrow.png";
+                console.log("직진");
+              }
                 navigator.geolocation.watchPosition(updateMapCenter);
 
               },
@@ -248,7 +263,7 @@
           var olChange0 = Math.abs(infoData[cnt].coordinate[0] - Math.floor(point.flatCoordinates[0]));
           var olChange1 = Math.abs(infoData[cnt].coordinate[1] - Math.floor(point.flatCoordinates[1]));
 
-          if(olChange0 <= 15 && olChange1 <=15){
+          if(olChange0 <= 20 && olChange1 <=20){
             cnt ++;
             // alert(cnt);
             textDescription = infoData[cnt-1].description.replace(infoData[cnt-1].description.match(reg)[0], "");
