@@ -18,7 +18,7 @@
 <body onload="initTmap()">
   <span class="slideshow-container">
     <div class="slide">
-        <i class='bx bx-subdirectory-right'></i>
+      <img id = "Img" src = ''>
         <div class="text">
             <div class="meter" id = "meter"></div>
             <div class="subText" id = "subText"></div>
@@ -240,7 +240,7 @@
           var longitudeChange = Math.abs(longtitude - previousPosition.longtitude);
 
           map.setCenter(new Tmapv2.LatLng(coords.latitude, coords.longitude));
-          
+
           marker_s.setPosition(new Tmapv2.LatLng(coords.latitude, coords.longitude));
          
           var point = new ol.geom.Point([longitude, latitude]).transform("EPSG:4326", "EPSG:3857");
@@ -248,7 +248,7 @@
           var olChange0 = Math.abs(infoData[cnt].coordinate[0] - Math.floor(point.flatCoordinates[0]));
           var olChange1 = Math.abs(infoData[cnt].coordinate[1] - Math.floor(point.flatCoordinates[1]));
 
-          if(olChange0 <= 20 && olChange1 <=20){
+          if(olChange0 <= 15 && olChange1 <=15){
             cnt ++;
             // alert(cnt);
             textDescription = infoData[cnt-1].description.replace(infoData[cnt-1].description.match(reg)[0], "");
@@ -257,6 +257,21 @@
             document.getElementById("meter").innerHTML = infoData[cnt-1].description.match(reg)[0];
             document.getElementById("subText").innerHTML = textDescription;
 
+            if(textDescription.includes("좌회전")){
+              var imgElement = document.getElementById("Img");
+              imgElement.src = "image/rightArrow.png"
+              console.log("좌회전");
+            }
+            else if(textDescription.includes("우회전")){
+              var imgElement = document.getElementById("Img");
+              imgElement.src = "image/leftArrow.png";
+              console.log("우회전")
+            }
+            else{
+              var imgElement = document.getElementById("Img");
+              imgElement.src = "image/straightArrow.png";
+              console.log("직진");
+            }
             let meter = infoData[cnt-1].description.match(reg)[0];
             let subText = textDescription;
             textSpeach(meter, subText);
