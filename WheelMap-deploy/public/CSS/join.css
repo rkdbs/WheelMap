@@ -6,6 +6,7 @@ body{
     height: 100vh;
     overflow: hidden;
     align-items: center;
+    justify-content: center;
 }
 .join-container{
     position: relative;
@@ -94,7 +95,7 @@ hr{
     margin-top: 5%;
 }
 .joinBtn{
-    width: 90%;
+    width: 96%;
     height: 70px;
     border-radius: 8px;
     border: 0;

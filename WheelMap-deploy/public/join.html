@@ -24,7 +24,7 @@
                 <input type="text" id="email"/>
             </div>
             
-            <div class="phone">
+            <!-- <div class="phone">
                 <p class="T">휴대폰 번호</p>
                 <div class="phone-container">
                     <input type="text" id="phoneNum" placeholder="000-0000-0000" onfocus="this.placeholder=''" onblur="this.placeholder='000-0000-0000'"/>
@@ -32,8 +32,8 @@
                 </div>
             </div>
             <input type="text" id="num" placeholder="인증번호 입력" onfocus="this.placeholder=''" onblur="this.placeholder='인증번호 입력'"/>
-        </div>
-        <button class="joinBtn">회원가입 하기</button>
+        </div> -->
+        <button class="joinBtn" onclick="moveMainPage()">회원가입 하기</button>
 
         
     </div> 
@@ -50,6 +50,10 @@
         const token = getKakaoToken(code);
         console.log(token);
         getKakaoUserInfo(token);
+
+        function moveMainPage() {
+            location.href = `index.html`;
+        }
 
         function getKakaoToken(code) {
             let token = "";
