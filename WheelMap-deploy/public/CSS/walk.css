@@ -23,7 +23,7 @@ body{
     display: flex;
     column-gap: 10px;
     background-color: white;
-    padding: 0 0 8% 4% ;
+    padding: 0 0 8% 0 ;
 }
 
 .text{
