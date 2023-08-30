@@ -1,16 +1,17 @@
 html,
 body{
+    display: flex;
     margin: 0;
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    align-items: center;
 }
 .join-container{
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin-top: 15%;
 }
 .joinText{
     font-size: 1.4rem;
